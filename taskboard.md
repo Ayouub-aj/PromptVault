@@ -20,8 +20,8 @@
 
 | Done | Task Description | Priority | Est. |
 | :---: | :--- | :--- | :--- |
-| ✅ | Create project folder structure (`/dashboard`, `/config`, `/database`, `/style`) | 🔴 High | 15 min |
-| [ ] | Start XAMPP — enable Apache + MySQL services; verify via `localhost` | 🔴 High | 5 min |
+| ✅ | Create project folder structure (`app`, `/dashboard`, `/config`, `/database`, `/style`) | 🔴 High | 15 min |
+| ✅ | Start XAMPP — enable Apache + MySQL services; verify via `localhost` | 🔴 High | 5 min |
 | [ ] | Open phpMyAdmin and create database `prompt_repository` with UTF-8 charset | 🔴 High | 10 min |
 | [ ] | Initialize local Git repo with `.gitignore`; create GitHub remote repo | 🔴 High | 15 min |
 | [ ] | Create `README.md` with project title, description, tech stack, and setup instructions | 🟡 Medium | 10 min |
