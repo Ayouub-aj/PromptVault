@@ -34,7 +34,9 @@
 ---
 
 ## 🗄️ Database Schema
-```
+
+```markdown
+
 users
 ├── id (PK)
 ├── username
@@ -60,6 +62,7 @@ prompts
 ## 🚀 Installation
 
 ### Prerequisites
+
 - PHP 8+ with PDO extension enabled
 - MySQL 5.7+ or MariaDB
 - A local server (XAMPP, Laragon, WAMP, or similar)
@@ -67,19 +70,21 @@ prompts
 ### Steps
 
 1. **Clone the repository**
+
 ```bash
    git clone https://github.com/your-username/prompt-vault.git
    cd prompt-vault
 ```
 
-2. **Import the database**
+1. **Import the database**
    - Open phpMyAdmin (or your MySQL client)
    - Create a new database: `prompt_vault`
    - Import the file: `database/schema.sql` (includes seed data)
 
-3. **Configure the connection**
+2. **Configure the connection**
    - Open `config/db.php`
    - Update with your local credentials:
+
 ```php
      $host = 'localhost';
      $db   = 'prompt_vault';
@@ -87,14 +92,15 @@ prompts
      $pass = '';
 ```
 
-4. **Run the project**
+1. **Run the project**
    - Place the folder in your server's `htdocs` or `www` directory
    - Visit: `http://localhost/prompt-vault`
 
 ---
 
 ## 📁 Project Structure
-```
+
+```markdown
 prompt-vault/
 ├── config/
 │   └── db.php              # Centralized PDO connection
@@ -137,4 +143,3 @@ prompt-vault/
 ## 👤 Author
 
 **[IDBELHAJ ayoub]** — Built as part of a Full-Stack PHP/MySQL project at DevGenius Solutions.
-
