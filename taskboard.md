@@ -22,10 +22,10 @@
 | :---: | :--- | :--- | :--- |
 | ✅ | Create project folder structure (`app`, `/dashboard`, `/config`, `/database`, `/style`) | 🔴 High | 15 min |
 | ✅ | Start XAMPP — enable Apache + MySQL services; verify via `localhost` | 🔴 High | 5 min |
-| [ ] | Open phpMyAdmin and create database `prompt_repository` with UTF-8 charset | 🔴 High | 10 min |
-| [ ] | Initialize local Git repo with `.gitignore`; create GitHub remote repo | 🔴 High | 15 min |
-| [ ] | Create `README.md` with project title, description, tech stack, and setup instructions | 🟡 Medium | 10 min |
-| [ ] | First commit: "init: project structure and documentation" | 🔴 High | 5 min |
+| ✅ | Open phpMyAdmin and create database `prompt_repository` with UTF-8 charset | 🔴 High | 10 min |
+| ✅ | Initialize local Git repo with `.gitignore`; create GitHub remote repo | 🔴 High | 15 min |
+| ✅ | Create `README.md` with project title, description, tech stack, and setup instructions | 🟡 Medium | 10 min |
+| ✅ | First commit: "init: project structure and documentation" | 🔴 High | 5 min |
 
 ---
 
@@ -33,14 +33,14 @@
 
 | Done | Task Description | Priority | Est. |
 | :---: | :--- | :--- | :--- |
-| [ ] | Design ERD showing `users`, `categories`, `prompts` relationships and FK constraints | 🔴 High | 20 min |
-| [ ] | Write SQL to create `users` table (id, name, email, password, created_at) | 🔴 High | 15 min |
-| [ ] | Write SQL to create `categories` table (id, name, description, created_at) | 🔴 High | 10 min |
-| [ ] | Write SQL to create `prompts` table (id, title, content, category_id, user_id, rating, created_at, updated_at) | 🔴 High | 15 min |
-| [ ] | Add Foreign Key constraints between `prompts.category_id` and `categories.id`; `prompts.user_id` and `users.id` | 🔴 High | 10 min |
-| [ ] | Write seed data: 3 categories, 2 users, 5 sample prompts with realistic content | 🟡 Medium | 20 min |
-| [ ] | Export full SQL script as `database.sql` in project root | 🔴 High | 10 min |
-| [ ] | Commit: "feat(db): schema, constraints, and seed data" | 🔴 High | 5 min |
+| ✅ | Design ERD showing `users`, `categories`, `prompts` relationships and FK constraints | 🔴 High | 20 min |
+| ✅ | Write SQL to create `users` table (id, name, email, password, created_at) | 🔴 High | 15 min |
+| ✅ | Write SQL to create `categories` table (id, name, description, created_at) | 🔴 High | 10 min |
+| ✅ | Write SQL to create `prompts` table (id, title, content, category_id, user_id, rating, created_at, updated_at) | 🔴 High | 15 min |
+| ✅ | Add Foreign Key constraints between `prompts.category_id` and `categories.id`; `prompts.user_id` and `users.id` | 🔴 High | 10 min |
+| ✅ | Write seed data: 3 categories, 2 users, 5 sample prompts with realistic content | 🟡 Medium | 20 min |
+| ✅ | Export full SQL script as `database.sql` in project root | 🔴 High | 10 min |
+| ✅ | Commit: "feat(db): schema, constraints, and seed data" | 🔴 High | 5 min |
 
 ---
 
