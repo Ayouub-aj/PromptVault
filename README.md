@@ -57,6 +57,26 @@ prompts
 └── created_at
 ```
 
+## 📊 schema visualisation
+
+![schema visualisation](/includes/image.png)
+
+### Tables & their columns
+
+- users — stores accounts. role (user/admin) is an ENUM so no separate admin table is needed.
+
+- categories — simple lookup table for themes like Code, SQL, DevOps...
+
+- prompts — the core table, with user_id and category_id as Foreign Keys linking to the other two.
+
+#### Relationships (the crow's foot notation)
+
+- users → prompts : one user can write zero or many prompts (||--o{)
+
+- categories → prompts : one category can tag zero or many prompts (||--o{)
+
+<font color="dark green">This is exactly what your INNER JOIN query in Step 10 exploits — it walks those FK links to replace raw IDs with human-readable names!</font>
+
 ---
 
 ## 🚀 Installation
