@@ -1,0 +1,135 @@
+/* 
+  PromptVault — Main Design System
+  Theme: Modern, Clean, High-Contrast
+*/
+
+:root {
+    --primary-color: #198754;      /* Success Green */
+    --primary-dark: #146c43;
+    --dark-color: #212529;         /* Bootstrap Dark */
+    --accent-color: #76fc58;       /* Vibrant Green */
+    --bg-light: #f8f9fa;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 15px 45px rgba(0, 0, 0, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Typography Utilities */
+.fw-900 { font-weight: 900; }
+.fw-500 { font-weight: 500; }
+.letter-spacing-1 { letter-spacing: 1px; }
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    color: #fff;
+    padding: 100px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-section h1 {
+    letter-spacing: -2px;
+}
+
+/* Interaction & Components */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.transition-hover {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.transition-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover) !important;
+}
+
+/* Card Improvements */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card.shadow {
+    box-shadow: var(--card-shadow) !important;
+}
+
+/* Forms */
+.form-control, .form-select {
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background-color: #f1f3f5;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15);
+}
+
+/* Prompt Content Display */
+pre.prompt-content {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary-color);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-wrap;       /* CSS3 */
+    white-space: -moz-pre-wrap;  /* Firefox */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .card.p-4 {
+        padding: 1.5rem !important;
+    }
+}

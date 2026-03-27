@@ -50,9 +50,9 @@
 | :---: | :--- | :--- | :--- |
 | ✅ | Create `config/db.php` with PDO connection using `mysql:host=localhost;dbname=prompt_vault` | 🔴 High | 20 min |
 | ✅ | Test PDO connection with error handling in a test file; verify database connectivity, ... | 🔴 High | 10 min |
-| [ ] | Create `includes/header.php` with navigation and `includes/footer.php` with copyright info | 🟡 Medium | 15 min |
-| [ ] | Create `index.php` as homepage with basic HTML structure and style imports | 🔴 High | 15 min |
-| [ ] | Commit: "feat(backend): PDO configuration, database connection, and base layout" | 🔴 High | 5 min |
+| ✅ | Create `includes/header.php` with navigation and `includes/footer.php` with copyright info | 🟡 Medium | 15 min |
+| ✅ | Create `index.php` as homepage with basic HTML structure and style imports | 🔴 High | 15 min |
+| ✅ | Commit: "feat(backend): PDO configuration, database connection, and base layout" | 🔴 High | 5 min |
 
 ---
 

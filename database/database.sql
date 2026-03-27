@@ -1,4 +1,9 @@
+CREATE DATABASE IF NOT EXISTS prompt_vault;
+USE prompt_vault;
 
+DROP TABLE IF EXISTS prompts;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS categories;
 
 CREATE TABLE users (
     id            INT UNSIGNED         NOT NULL AUTO_INCREMENT, -- PK /unique id referenced to prompts as a foreign key see schema README.md, auto incremented
@@ -6,31 +11,31 @@ CREATE TABLE users (
     email         VARCHAR(150)         NOT NULL UNIQUE,-- one account per email
     password_hash VARCHAR(255)         NOT NULL,-- password hash using BCRYPT
     role          ENUM('user','admin') NOT NULL DEFAULT 'user', -- roles if none assigned default is user
-    created_at    DATETIME             NOT NULL DEFAULT CURRENT_TIMESTAMP, --date time filled on data insert
+    created_at    DATETIME             NOT NULL DEFAULT CURRENT_TIMESTAMP, -- date time filled on data insert
     PRIMARY KEY (id) -- primary key for this table
 );
 
 CREATE TABLE categories (
     id         INT UNSIGNED NOT NULL AUTO_INCREMENT, -- PK /unique id referenced to prompts as a foreign key see schema README.md, auto incremented
-    name       VARCHAR(100) NOT NULL UNIQUE,--unique label/category name, only one label insertion
-    created_at DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,--date time filled on insert
+    name       VARCHAR(100) NOT NULL UNIQUE, -- unique label/category name, only one label insertion
+    created_at DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP, -- date time filled on insert
     PRIMARY KEY (id)
 );
 
 CREATE TABLE prompts (
-    id          INT UNSIGNED NOT NULL AUTO_INCREMENT,--PK/unique id auto incremented
-    title       VARCHAR(200) NOT NULL,--short name for the prompt
-    content     TEXT         NOT NULL,--full prompt content with no limit
-    user_id     INT UNSIGNED NOT NULL,--links to user-id to know who wrote it 
-    category_id INT UNSIGNED NOT NULL,--links to category id to know to what category it belongs
-    created_at  DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,-- auto filled on insertion
-    updated_at  DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,-- auto filled on edit
+    id          INT UNSIGNED NOT NULL AUTO_INCREMENT, -- PK/unique id auto incremented
+    title       VARCHAR(200) NOT NULL, -- short name for the prompt
+    content     TEXT         NOT NULL, -- full prompt content with no limit
+    user_id     INT UNSIGNED NOT NULL, -- links to user-id to know who wrote it 
+    category_id INT UNSIGNED NOT NULL, -- links to category id to know to what category it belongs
+    created_at  DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP, -- auto filled on insertion
+    updated_at  DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- auto filled on edit
     PRIMARY KEY (id),
 
-    --added these conditions/constraints(if a user is deleted all his prompts are deleted too)
+    -- added these conditions/constraints(if a user is deleted all his prompts are deleted too)
     CONSTRAINT fk_prompts_user     FOREIGN KEY (user_id)     REFERENCES users(id)      ON DELETE CASCADE,
-    --added a RESTRICT for deletion of categories; if a categorie is deleted the prompts arent if maybe admin wants to assign them to another category manually
-    CONSTRAINT fk_prompts_category FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE RESTRICT,
+    -- added a RESTRICT for deletion of categories; if a categorie is deleted the prompts arent if maybe admin wants to assign them to another category manually
+    CONSTRAINT fk_prompts_category FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE RESTRICT
 );
 -- ┌─────────────────────┬──────────────────────────┬──────────────────────────────────────┐
 -- │                     │  user_id → CASCADE       │  category_id → RESTRICT              │
@@ -52,8 +57,8 @@ INSERT INTO categories (name) VALUES ('QAtesting');
 
 --  insert DATA — Users
 --  Passwords below are hashed versions of:
---    admin123  → for admin user
---    dev1pass  → for dev users
+--    password  → for admin user
+--    password  → for dev users
 --  (generated with password_hash($pass, PASSWORD_BCRYPT))
 
 INSERT INTO users (username, email, password_hash, role) VALUES ('admin', 'admin@admin.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
