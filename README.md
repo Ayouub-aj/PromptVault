@@ -117,23 +117,36 @@ prompts
 
 ```markdown
 prompt-vault/
+├── app/
+│   ├── auth/               # Authentication logic (Login/Register/Logout)
+│   │   ├── auth.php
+│   │   ├── login.php
+│   │   ├── logout.php
+│   │   └── register.php
+│   ├── prompt/             # Prompt management (CRUD + View)
+│   │   ├── create-prompt.php
+│   │   ├── delete-prompt.php
+│   │   ├── download.php
+│   │   ├── edit-prompt.php
+│   │   └── view-prompt.php
+│   ├── admin.php           # Admin control center
+│   ├── dashboard.php       # User dashboard
+│   ├── index.php           # Main repository view
+│   ├── edit-category.php   # Category management
+│   └── delete-category.php
 ├── config/
-│   └── db.php              # Centralized PDO connection
+│   └── db.php              # Centralized PDO connection & BASE_URL
 ├── database/
 │   └── schema.sql          # DB creation + seed data
-├── auth/
-│   ├── login.php
-│   ├── register.php
-│   └── logout.php
-├── prompts/
-│   ├── index.php           # List & filter prompts
-│   ├── create.php
-│   ├── edit.php
-│   └── delete.php
-├── admin/
-│   └── dashboard.php       # Category management + stats
 ├── includes/
-│   └── header.php
+│   ├── header.php          # Global navigation
+│   ├── footer.php
+│   └── img/                # Screenshots and UI assets
+├── style/
+│   └── main.css            # Custom CSS
+├── tests/
+│   ├── unit_tests.php      # Functional test logic
+│   └── TestPdoConnection.php
 └── README.md
 ```
 
