@@ -63,7 +63,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                 <form action="index.php" method="GET" class="bg-white p-2 rounded-pill shadow-lg d-flex gap-2">
                     <input type="text" name="search" class="form-control border-0 px-4 rounded-pill" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search prompts..." style="box-shadow: none;">
                     
-                    <select name="category" class="form-select border-0 w-auto d-none d-md-block" style="box-shadow: none;">
+                    <select name="category" class="form-select border-0 w-auto d-none d-md-block" style="box-shadow: none; padding-right: 2rem;">
                         <option value="">All Categories</option>
                         <?php foreach ($categories as $cat): ?>
                             <option value="<?php echo $cat['id']; ?>" <?php echo ($cat['id'] == $category) ? 'selected' : ''; ?>>
@@ -72,7 +72,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                         <?php endforeach; ?>
                     </select>
 
-                    <select name="sort" class="form-select border-0 w-auto d-none d-lg-block" style="box-shadow: none;">
+                    <select name="sort" class="form-select border-0 w-auto d-none d-lg-block" style="box-shadow: none; padding-right: 2rem;">
                         <option value="newest" <?php echo ($sort == 'newest') ? 'selected' : ''; ?>>Newest</option>
                         <option value="oldest" <?php echo ($sort == 'oldest') ? 'selected' : ''; ?>>Oldest</option>
                     </select>
@@ -87,19 +87,19 @@ require_once dirname(__DIR__) . '/includes/header.php';
 <div class="container pb-5" id="prompts">
     <div class="row align-items-center mb-5 mt-4">
         <div class="col-md-8">
-            <h2 class="fw-900 display-6 mb-0">Repository Logs</h2>
+            <h2 class="fw-900 display-6 mb-0">Latest prompts</h2>
             <p class="text-muted">
                 <?php if (!empty($search) || !empty($category)): ?>
                     Filtered Results: <span class="fw-bold text-dark">'<?php echo htmlspecialchars($search); ?>'</span> 
                     <a href="index.php" class="text-danger small ms-2 text-decoration-none">Clear Filters &times;</a>
                 <?php else: ?>
-                    The latest contributions from our global engineering network.
+                    The latest contributions from our community.
                 <?php endif; ?>
             </p>
         </div>
         <div class="col-md-4 text-md-end">
-            <span class="badge bg-dark rounded-pill py-2 px-4 shadow-sm fs-6">
-                <?php echo $totalCount; ?> ASSETS DETECTED
+            <span class="badge bg-success rounded-pill py-2 px-4 shadow-sm fs-6">
+                <?php echo $totalCount; ?> Prompts found
             </span>
         </div>
     </div>
@@ -137,7 +137,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                                     By <span class="fw-bold text-dark"><?php echo htmlspecialchars($prompt['author']); ?></span>
                                 </div>
                                 <a href="prompt/view-prompt.php?id=<?php echo $prompt['id']; ?>" class="btn btn-sm btn-dark px-3 rounded-pill fw-bold shadow-sm">
-                                    Open Asset &rarr;
+                                    Show &rarr;
                                 </a>
                             </div>
                         </div>

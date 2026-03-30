@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+// root URL for the project
+define('BASE_URL', '/projectPHP/PromptVault - Copy/');
+
 $host = 'localhost';
 $db = 'prompt_vault';
 

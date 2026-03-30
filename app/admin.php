@@ -24,7 +24,6 @@ try {
 $error = "";
 $success = "";
 
-// Handle Adding a New Category
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_category'])) {
     $catName = trim($_POST['cat_name']);
     if (!empty($catName)) {
@@ -41,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_category'])) {
 }
 
 try {
-    // 1. All Prompts
     $stmt = $pdo->query("
         SELECT p.*, u.username as author_name, c.name as category_name 
         FROM prompts p 
@@ -51,11 +49,9 @@ try {
     ");
     $allPrompts = $stmt->fetchAll();
 
-    // 2. All Categories
     $catListStmt = $pdo->query("SELECT * FROM categories ORDER BY name ASC");
     $categories = $catListStmt->fetchAll();
 
-    // 3. Top Contributors
     $topStmt = $pdo->query("
         SELECT u.username, u.email, COUNT(p.id) as prompt_count 
         FROM users u 
@@ -66,7 +62,6 @@ try {
     ");
     $contributors = $topStmt->fetchAll();
 
-    // 4. Global Stats
     $totalPrompts = count($allPrompts);
     $userCountStmt = $pdo->query("SELECT COUNT(*) FROM users");
     $totalUsers = $userCountStmt->fetchColumn();
