@@ -1,13 +1,13 @@
 <?php
-require_once dirname(__DIR__) . '/config/db.php';
+require_once dirname(__DIR__, 2) . '/config/db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit;
 }
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header("Location: dashboard.php");
+    header("Location: ../dashboard.php");
     exit;
 }
 
@@ -43,7 +43,7 @@ try {
     $prompt = $stmt->fetch();
 
     if (!$prompt) {
-        header("Location: dashboard.php");
+        header("Location: ../dashboard.php");
         exit;
     }
 } catch (PDOException $e) {
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__, 2) . '/includes/header.php';
 ?>
 
 <div class="container py-5">
@@ -120,7 +120,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                         </div>
 
                         <div class="mt-5 border-top pt-4 text-end">
-                            <a href="dashboard.php" class="btn btn-light px-4 me-2">Cancel</a>
+                            <a href="../dashboard.php" class="btn btn-light px-4 me-2">Cancel</a>
                             <button type="submit" class="btn btn-dark px-5 py-2 fw-bold rounded-pill shadow-sm">Save Changes</button>
                         </div>
                     </form>
@@ -131,5 +131,5 @@ require_once dirname(__DIR__) . '/includes/header.php';
 </div>
 
 <?php 
-require_once dirname(__DIR__) . '/includes/footer.php'; 
+require_once dirname(__DIR__, 2) . '/includes/footer.php'; 
 ?>

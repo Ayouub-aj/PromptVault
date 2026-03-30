@@ -1,13 +1,13 @@
 <?php
-require_once dirname(__DIR__) . '/config/db.php';
+require_once dirname(__DIR__, 2) . '/config/db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit;
 }
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header("Location: dashboard.php");
+    header("Location: ../dashboard.php");
     exit;
 }
 
@@ -35,7 +35,7 @@ try {
     $prompt = $stmt->fetch();
 
     if (!$prompt) {
-        header("Location: dashboard.php");
+        header("Location: ../dashboard.php");
         exit;
     }
 } catch (PDOException $e) {
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $delete->execute([$p_id, $u_id]);
         }
         
-        $redirect = $isAdmin ? "admin.php" : "dashboard.php";
+        $redirect = $isAdmin ? "../admin.php" : "../dashboard.php";
         header("Location: $redirect");
         exit;
     } catch (PDOException $e) {
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__, 2) . '/includes/header.php';
 ?>
 
 <div class="container py-5 mt-5">
@@ -94,7 +94,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                     </form>
                     
                     <div class="mt-3">
-                        <a href="dashboard.php" class="btn btn-link text-muted fw-bold text-decoration-none">No, Keep It</a>
+                        <a href="../dashboard.php" class="btn btn-link text-muted fw-bold text-decoration-none">No, Keep It</a>
                     </div>
                 </div>
             </div>
@@ -103,5 +103,5 @@ require_once dirname(__DIR__) . '/includes/header.php';
 </div>
 
 <?php 
-require_once dirname(__DIR__) . '/includes/footer.php'; 
+require_once dirname(__DIR__, 2) . '/includes/footer.php'; 
 ?>

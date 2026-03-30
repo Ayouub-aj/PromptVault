@@ -1,8 +1,8 @@
 <?php
-require_once dirname(__DIR__) . '/config/db.php';
+require_once dirname(__DIR__, 2) . '/config/db.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -31,7 +31,7 @@ try {
     die("Error: " . $e->getMessage());
 }
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__, 2) . '/includes/header.php';
 ?>
 
 <div class="container py-5">
@@ -65,7 +65,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                     </div>
 
                     <div class="mt-5 border-top pt-4 d-flex justify-content-center gap-3">
-                        <a href="index.php" class="btn btn-light px-4 py-2 fw-bold rounded-pill text-muted">
+                        <a href="../index.php" class="btn btn-light px-4 py-2 fw-bold rounded-pill text-muted">
                             &larr; Back to Repository
                         </a>
                         <a href="download.php?id=<?php echo $p_id; ?>" class="btn btn-success px-5 py-2 fw-bold rounded-pill shadow-sm">
@@ -90,5 +90,5 @@ function copyPrompt() {
 </script>
 
 <?php 
-require_once dirname(__DIR__) . '/includes/footer.php'; 
+require_once dirname(__DIR__, 2) . '/includes/footer.php'; 
 ?>

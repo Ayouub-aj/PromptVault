@@ -1,8 +1,8 @@
 <?php
-require_once dirname(__DIR__) . '/config/db.php';
+require_once dirname(__DIR__, 2) . '/config/db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit;
 }
 
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__, 2) . '/includes/header.php';
 ?>
 
 <div class="container py-5">
@@ -48,7 +48,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <div class="col-lg-8">
             <nav aria-label="breadcrumb" class="mb-4">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="dashboard.php" class="text-success text-decoration-none">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="../dashboard.php" class="text-success text-decoration-none">Dashboard</a></li>
                     <li class="breadcrumb-item active" aria-current="page">New Prompt</li>
                 </ol>
             </nav>
@@ -86,7 +86,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                         </div>
 
                         <div class="mt-5 border-top pt-4 text-end">
-                            <a href="dashboard.php" class="btn btn-light px-4 me-2 rounded-pill fw-bold">Discard</a>
+                            <a href="../dashboard.php" class="btn btn-light px-4 me-2 rounded-pill fw-bold">Discard</a>
                             <button type="submit" class="btn btn-dark px-5 py-2 fw-bold rounded-pill shadow-sm">Publish Prompt &rarr;</button>
                         </div>
                     </form>
@@ -97,5 +97,5 @@ require_once dirname(__DIR__) . '/includes/header.php';
 </div>
 
 <?php 
-require_once dirname(__DIR__) . '/includes/footer.php'; 
+require_once dirname(__DIR__, 2) . '/includes/footer.php'; 
 ?>

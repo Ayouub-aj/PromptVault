@@ -136,7 +136,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                                 <div class="text-muted small">
                                     By <span class="fw-bold text-dark"><?php echo htmlspecialchars($prompt['author']); ?></span>
                                 </div>
-                                <a href="view-prompt.php?id=<?php echo $prompt['id']; ?>" class="btn btn-sm btn-dark px-3 rounded-pill fw-bold shadow-sm">
+                                <a href="prompt/view-prompt.php?id=<?php echo $prompt['id']; ?>" class="btn btn-sm btn-dark px-3 rounded-pill fw-bold shadow-sm">
                                     Open Asset &rarr;
                                 </a>
                             </div>

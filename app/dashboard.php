@@ -52,7 +52,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <h1 class="fw-900 mb-2">Welcome back, <?php echo htmlspecialchars($username); ?>!</h1>
         <p class="lead fw-500 opacity-75"><?php echo $promptCount; ?> prompts published in your private library.</p>
         <div class="mt-4 d-flex justify-content-center gap-3">
-            <a href="create-prompt.php" class="btn btn-dark btn-lg px-5 py-3 rounded-pill fw-bold shadow-sm transition-hover">
+            <a href="prompt/create-prompt.php" class="btn btn-dark btn-lg px-5 py-3 rounded-pill fw-bold shadow-sm transition-hover">
                 + New Prompt
             </a>
             <?php if ($isAdmin): ?>
@@ -113,7 +113,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                                 <?php foreach ($prompts as $prompt): ?>
                                     <tr>
                                         <td class="ps-3 fw-bold">
-                                            <a href="view-prompt.php?id=<?php echo $prompt['id']; ?>" class="text-dark text-decoration-none">
+                                            <a href="prompt/view-prompt.php?id=<?php echo $prompt['id']; ?>" class="text-dark text-decoration-none">
                                                 <?php echo htmlspecialchars($prompt['title']); ?>
                                             </a>
                                         </td>
@@ -126,8 +126,8 @@ require_once dirname(__DIR__) . '/includes/header.php';
                                             <?php echo date('M d, Y', strtotime($prompt['created_at'])); ?>
                                         </td>
                                         <td class="text-end pe-3">
-                                            <a href="edit-prompt.php?id=<?php echo $prompt['id']; ?>" class="btn btn-sm btn-outline-dark rounded-pill px-3 fw-bold me-1">Edit</a>
-                                            <a href="delete-prompt.php?id=<?php echo $prompt['id']; ?>" class="btn btn-sm btn-outline-danger rounded-pill px-3 fw-bold">Delete</a>
+                                            <a href="prompt/edit-prompt.php?id=<?php echo $prompt['id']; ?>" class="btn btn-sm btn-outline-dark rounded-pill px-3 fw-bold me-1">Edit</a>
+                                            <a href="prompt/delete-prompt.php?id=<?php echo $prompt['id']; ?>" class="btn btn-sm btn-outline-danger rounded-pill px-3 fw-bold">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -141,7 +141,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
                         </div>
                         <h4 class="fw-bold">No prompts yet</h4>
                         <p class="text-muted">Start building your prompt repository today.</p>
-                        <a href="create-prompt.php" class="btn btn-success rounded-pill px-4 fw-bold mt-2">Create Your First Prompt</a>
+                        <a href="prompt/create-prompt.php" class="btn btn-success rounded-pill px-4 fw-bold mt-2">Create Your First Prompt</a>
                     </div>
                 <?php endif; ?>
             </div>

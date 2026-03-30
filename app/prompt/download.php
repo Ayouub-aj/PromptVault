@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__DIR__) . '/config/db.php';
+require_once dirname(__DIR__, 2) . '/config/db.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("Invalid request targeting the repository logs.");

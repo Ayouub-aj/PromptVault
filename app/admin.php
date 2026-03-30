@@ -83,7 +83,7 @@ require_once dirname(__DIR__) . '/includes/header.php';
         <p class="lead fw-500 opacity-75">Full control over the PromptVault repository.</p>
         
         <div class="mt-4">
-            <a href="create-prompt.php" class="btn btn-success btn-lg px-5 py-3 rounded-pill fw-bold shadow-sm transition-hover">
+            <a href="prompt/create-prompt.php" class="btn btn-success btn-lg px-5 py-3 rounded-pill fw-bold shadow-sm transition-hover">
                 + Create New Prompt
             </a>
         </div>
@@ -143,8 +143,8 @@ require_once dirname(__DIR__) . '/includes/header.php';
                                         <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3"><?php echo htmlspecialchars($p['category_name']); ?></span>
                                     </td>
                                     <td class="text-end pe-3">
-                                        <a href="edit-prompt.php?id=<?php echo $p['id']; ?>" class="btn btn-sm btn-dark rounded-pill px-3 fw-bold me-1">Edit</a>
-                                        <a href="delete-prompt.php?id=<?php echo $p['id']; ?>" class="btn btn-sm btn-outline-danger rounded-pill px-3 fw-bold">Del</a>
+                                        <a href="prompt/edit-prompt.php?id=<?php echo $p['id']; ?>" class="btn btn-sm btn-dark rounded-pill px-3 fw-bold me-1">Edit</a>
+                                        <a href="prompt/delete-prompt.php?id=<?php echo $p['id']; ?>" class="btn btn-sm btn-outline-danger rounded-pill px-3 fw-bold">Del</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
