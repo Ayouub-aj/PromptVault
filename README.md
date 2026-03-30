@@ -2,11 +2,6 @@
 
 > A full-stack internal platform for developer teams to save, organize, and reuse their best LLM prompts — so no "perfect prompt" ever gets lost in a chat history again.
 
----
-
-## 🖼️ Screenshots
-
-> *()*
 
 ---
 
@@ -59,7 +54,7 @@ prompts
 
 ## 📊 schema visualisation
 
-![schema visualisation](/includes/image.png)
+![schema visualisation](/includes/img/tables.png)
 
 ### Tables & their columns
 
@@ -159,6 +154,17 @@ prompt-vault/
 - [ ] Multi-criteria search — filter by title **and** category simultaneously
 
 ---
+
+## 🖼️ Screenshots
+
+![login](/includes/img/login.png)
+![register](/includes/img/register.png)
+![dashboard](/includes/img/full_command_center.png)
+![admin](/includes/img/admin.png)
+![create](/includes/img/create.png)
+![edit](/includes/img/edit.png)
+![delete](/includes/img/delete.png)
+
 
 ## 👤 Author
 
