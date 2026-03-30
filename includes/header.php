@@ -41,14 +41,14 @@
                             <a class="nav-link px-3 <?php echo ($current_page == 'dashboard.php') ? 'active' : ''; ?>" href="dashboard.php">Dashboard</a>
                         </li>
                         <li class="nav-item ms-lg-2">
-                            <a class="btn btn-outline-danger btn-sm rounded-pill px-4 fw-bold" href="logout.php">Logout</a>
+                            <a class="btn btn-outline-danger btn-sm rounded-pill px-4 fw-bold" href="auth/logout.php">Logout</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a class="nav-link px-3 <?php echo ($current_page == 'login.php') ? 'active' : ''; ?>" href="login.php">Login</a>
+                            <a class="nav-link px-3 <?php echo ($current_page == 'login.php') ? 'active' : ''; ?>" href="auth/login.php">Login</a>
                         </li>
                         <li class="nav-item ms-lg-2">
-                            <a class="btn btn-success btn-sm rounded-pill px-4 fw-bold" href="register.php">Register</a>
+                            <a class="btn btn-success btn-sm rounded-pill px-4 fw-bold" href="auth/register.php">Register</a>
                         </li>
                     <?php endif; ?>
                 </ul>

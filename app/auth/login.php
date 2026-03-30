@@ -1,8 +1,8 @@
 <?php
-require_once dirname(__DIR__) . '/config/db.php';
+require_once dirname(__DIR__, 2) . '/config/db.php';
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['username'] = (string)$user['username'];
                 $_SESSION['role'] = (string)$user['role'];
 
-                header("Location: index.php");
+                header("Location: ../index.php");
                 exit;
             } else {
                 $error = "Incorrect email or password.";
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once dirname(__DIR__) . '/includes/header.php';
+require_once dirname(__DIR__) . '/../includes/header.php';
 ?>
 
 <div class="container py-5 mt-4">
@@ -84,5 +84,5 @@ require_once dirname(__DIR__) . '/includes/header.php';
 </div>
 
 <?php 
-require_once dirname(__DIR__) . '/includes/footer.php'; 
+require_once dirname(__DIR__) . '/../includes/footer.php'; 
 ?>
