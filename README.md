@@ -74,6 +74,10 @@ prompts
 
 ---
 
+## 📊 visualisation
+
+![schema visualisation](/includes/img/diagram.png)
+
 ## 🚀 Installation
 
 ### Prerequisites
